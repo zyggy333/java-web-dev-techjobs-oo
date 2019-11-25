@@ -31,6 +31,34 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+
+    public static String toString(Job jobInfo){
+
+        int jobInfoID = jobInfo.getId();
+        String jobInfoName = jobInfo.getName();
+        String jobInfoEmployer = jobInfo.getEmployer().toString();
+        String jobInfoLocation = jobInfo.getLocation().toString();
+        String jobInfoPositionType = jobInfo.getPositionType().toString();
+        String jobInfoCoreCompetency = jobInfo.getCoreCompetency().toString();
+
+        if(jobInfoName==""){
+            jobInfoName="Data not available";
+        }
+        if(jobInfoEmployer==""){
+            jobInfoEmployer="Data not available";
+        }
+        if(jobInfoLocation==""){
+            jobInfoLocation="Data not available";
+        }
+        if(jobInfoPositionType==""){
+            jobInfoPositionType="Data not available";
+        }
+        if(jobInfoCoreCompetency==""){
+            jobInfoCoreCompetency="Data not available";
+        }
+
+        return (" \nID: " + jobInfoID + "\nName: " + jobInfoName + "\nEmployer: " + jobInfoEmployer + "\nLocation: " + jobInfoLocation + "\nPosition Type: " + jobInfoPositionType + "\nCore Competency: "+ jobInfoCoreCompetency + "\n ");
+    }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
@@ -97,7 +125,5 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 }
